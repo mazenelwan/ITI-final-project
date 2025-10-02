@@ -1,0 +1,304 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+   <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-...xxxx..." crossorigin="anonymous" />
+
+  <title>final project iti</title>
+
+  <link rel="stylesheet" href="{% static 'css/shop2.css'%}">
+<script src="{% static 'js/shop2.js'%}"></script> 
+</head>
+
+
+  <body>
+<!--  bar -->
+<header class="header" id="header">
+<nav class="navbar container">
+<a href="#" class="brand">Bugless Fit</a>
+<div class="search">
+<form class="search-form">
+<i class="bx bx-search search-icon"></i>
+ <input type="text" name="search" class="search-input" placeholder="Search for Destinations" autofocus>
+</form>
+</div>
+
+<div class="menu" id="menu">
+<ul class="menu-inner">
+<li><a href="/mazen" class="menu-link ">HOME</a></li>
+<li><a href="/mazen/shop" class="menu-link active">SHOP</a></li>
+<li><a href="/mazen/contact" class="menu-link">CONTACT</a></li>
+<li class="menu-item"><a href="/mazen/about" class="menu-link">ABOUT</a></li>
+
+
+         </ul>
+      </div>
+
+      <div class="burger" id="burger">
+         <span class="burger-line"></span>
+         <span class="burger-line"></span>
+         <span class="burger-line"></span>
+      </div>
+   </nav>
+</header>
+
+<!-- end of bar -->
+
+<!-- Products Section -->
+<div id="cart" class="cart-sidebar">
+  <h3>Shopping Cart</h3>
+  <div id="cart-items"></div>
+  <p>Total: EGP <span id="cart-total">0</span></p>
+</div>
+
+
+  <!-- Products -->
+   <h1 id="Men's Shirts">Men's Shirts</h1>
+  <div class="products">
+
+    {% block content %}
+    {% for post in posts %}
+   <div class="product-card">
+      <img src="{{post.image}}" alt="Oxford Shirt">
+      <div class="product-info">
+        <h3>{{post.name}}</h3>
+        <p>EGP {{post.price}} <span class="rating">({{post.rate}}⭐)</span></p>
+        <a href="#" class="add-btn">Add to cart</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div> 
+
+
+<h1 id="Jacket">Jacket</h1>
+  <div class="products">
+    {% for jacket in jackets %}
+   <div class="product-card">
+      <img src="{{jacket.image}}" alt="Oxford Shirt">
+      <div class="product-info">
+        <h3>{{jacket.name}}</h3>
+        <p>EGP {{jacket.price}} <span class="rating">({{jacket.rate}}⭐)</span></p>
+        <a href="#" class="add-btn">Add to cart</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <h1 id="Pants">Pants</h1>
+  <div class="products">
+    {% for pant in pants %}
+   <div class="product-card">
+      <img src="{{pant.image}}" alt="Oxford Shirt">
+      <div class="product-info">
+        <h3>{{pant.name}}</h3>
+        <p>EGP {{pant.price}} <span class="rating">({{pant.rate}}⭐)</span></p>
+        <a href="#" class="add-btn">Add to cart</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <h1 id="T-Shirts">T-Shirts</h1>
+
+  <div class="products">
+    {% for tshirt in tshirts %}
+   <div class="product-card">
+      <img src="{{tshirt.image}}" alt="Oxford Shirt">
+      <div class="product-info">
+        <h3>{{tshirt.name}}</h3>
+        <p>EGP {{tshirt.price}} <span class="rating">({{tshirt.rate}}⭐)</span></p>
+        <a href="#" class="add-btn">Add to cart</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <h1 id="Polo">Polo</h1>
+
+   <div class="products">
+    {% for polo in polos %}
+   <div class="product-card">
+      <img src="{{polo.image}}" alt="Oxford Shirt">
+      <div class="product-info">
+        <h3>{{polo.name}}</h3>
+        <p>EGP {{polo.price}} <span class="rating">({{polo.rate}}⭐)</span></p>
+        <a href="#" class="add-btn">Add to cart</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <h1 id="Shoes">Shoes</h1>
+
+   <div class="products">
+    {% for shoe in shoes %}
+   <div class="product-card">
+      <img src="{{shoe.image}}" alt="Oxford Shirt">
+      <div class="product-info">
+        <h3>{{shoe.name}}</h3>
+        <p>EGP {{shoe.price}} <span class="rating">({{shoe.rate}}⭐)</span></p>
+        <a href="#" class="add-btn">Add to cart</a>
+      </div>
+    </div>
+    {% endfor %}
+    {% endblock %}
+  </div>
+
+
+
+
+ 
+ <section id="about-section" class="p-100 pb-2 bg-one-dark">
+    <div class="container">
+      <div class="row d-flex align-items-end">
+        <div class="col-md-6 text-center">
+       
+        </div>
+        <div class="col-md-6">
+          <p class="color-base">ABOUT US!</p>
+          <h2 class="text-white mb-4">My Real Life is Up to You? I am a <span class="color-base">Front-end Developer</span>
+          </h2>
+          <p>I am a Computer Science student from Egypt, interested in both front-end and back-end development. I work with C, Python, and JavaScript, and I aim to grow into a skilled full-stack developer.
+          </p>
+          <div class="row">
+            <div class="col-md-6 about-bullet">
+              <ul class="bullet-check">
+                <li>Front-end Development</li>
+                <li>Back-end Development</li>
+                <li>Strong knowledge of C Programming</li>
+              </ul>
+            </div>
+            <div class="col-md-6 about-bullet">
+              <ul class="bullet-check">
+                <li>Python Programming</li>
+                <li>Problem Solving & Algorithms</li>
+                <li>Continuous Learning in Full-Stack Development</li>
+              </ul>
+            </div>
+          </div>
+
+
+          <div class="wrap-button mt-50">
+        <a href="https://drive.google.com/file/d/1iimulldfe2w5Utqos4gdT5h1-ybzE8fO/view?usp=drive_link" target="_blank" 
+           class="btn btn-medium btn-inline btn-fill mr-4">Cv Download</a>
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="about-info-wrap p-100">
+        <div class="about-info p-5">
+          <div class="row">
+            <div class="col-md-4">
+              <h6 class="text-white text-uppercase mb-4">Contact Now</h6>
+              <p>
+  <i class="fas fa-envelope-open-text mr-2 color-base"></i>
+  <a href="mailto:mazenelwan246@gmail.com" 
+     style="color: inherit; text-decoration: none;">
+     mazenelwan246@gmail.com
+  </a>
+</p>
+
+              <p>
+  <i class="fas fa-phone-alt mr-2 color-base"></i>
+  <a href="tel:+201140436386" style="color: inherit; text-decoration: none;">
+    01140436386
+  </a>
+</p>
+
+            </div>
+            <div class="col-md-4">
+              <h6 class="text-white text-uppercase mb-4">Address</h6>
+
+           <p>
+  <i class="fas fa-map-marker-alt mr-2 color-base"></i>
+  <a href="https://www.google.com/maps/place/4+Talaat+Harb+Square,+Cairo" 
+     target="_blank" 
+     style="color: inherit; text-decoration: none;">
+     4 Talaat Harb Square – Downtown – Cairo – Egypt
+  </a>
+</p>
+            </div>
+            <div class="col-md-4">
+              <h6 class="text-white text-uppercase mb-4">Social Media</h6>
+              <p><i class="far fa-comment-alt mr-2 color-base"></i>Also find us social media below</p>
+
+
+<div class="inline-social">
+  <ul>
+    <li><a href="https://www.facebook.com/share/16zsXM9CkC/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+    <li><a href="https://www.linkedin.com/in/mazen-elwan-67719b358" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+    <li><a href="https://www.instagram.com/mazenelwan_official?igsh=MWowaDhsazdrZHgxdw%3D%3D&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a></li>
+    <li><a href="https://www.tiktok.com/@mazen_elwan_official?_t=ZS-905JLe3GUPI&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a></li>
+  </ul>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script>
+// Shopping Cart Logic
+const addBtns = document.querySelectorAll('.add-btn');
+const cartItems = document.getElementById('cart-items');
+const cartTotal = document.getElementById('cart-total');
+
+let cart = [];
+
+addBtns.forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const productCard = e.target.closest('.product-card');
+    const name = productCard.querySelector('h3').innerText;
+    const price = parseFloat(productCard.querySelector('p').innerText.replace('EGP ', ''));
+    
+    const existing = cart.find(item => item.name === name);
+    if(existing){
+      existing.qty += 1;
+    } else {
+      cart.push({name, price, qty: 1});
+    }
+    renderCart();
+  });
+});
+
+function renderCart() {
+  cartItems.innerHTML = '';
+  let total = 0;
+  cart.forEach(item => {
+    total += item.price * item.qty;
+    const div = document.createElement('div');
+    div.className = 'cart-item';
+    div.innerHTML = `
+      <span>${item.name} x ${item.qty}</span>
+      <span>EGP ${item.price * item.qty}</span>
+    `;
+    cartItems.appendChild(div);
+  });
+  cartTotal.innerText = total.toFixed(2);
+}
+</script>
+    </body>
+
+</html>
