@@ -1,0 +1,285 @@
+/* ================================================
+   MOBILE FIX - Bugless Fit
+   Add this file to ALL pages AFTER the existing CSS:
+   <link rel="stylesheet" href="mobile-fix.css">
+   ================================================ */
+
+/* ---- GLOBAL ---- */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---- NAVBAR ---- */
+@media (max-width: 575px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+    grid-template-columns: 1fr auto !important;
+  }
+
+  .brand {
+    font-size: 1.2rem;
+  }
+
+  .search {
+    grid-column: span 2;
+    padding-block: 0.5rem;
+  }
+
+  .search-form {
+    padding-inline: 1rem;
+  }
+
+  .search-input {
+    font-size: 0.9rem;
+    padding-block: 0.5rem;
+  }
+}
+
+/* ---- CAROUSEL SLIDER ---- */
+@media (max-width: 767px) {
+  .carousel-item {
+    height: 55vw !important;
+    min-height: 200px;
+  }
+
+  .carousel-caption {
+    bottom: 10px;
+    padding: 8px;
+  }
+
+  .carousel-caption h3 {
+    font-size: 1.1rem;
+  }
+
+  .carousel-caption h5 {
+    font-size: 0.85rem;
+  }
+}
+
+/* ---- PORTFOLIO / PRODUCT GRID ---- */
+@media (max-width: 519px) {
+  .project {
+    flex: 0 0 calc(100% - 20px) !important;
+    margin: 8px !important;
+  }
+
+  .project-info-title {
+    font-size: 1.2em !important;
+  }
+}
+
+/* ---- BANNER (sm-banner) ---- */
+#sm-banner {
+  margin: 20px !important;
+  gap: 15px;
+}
+
+#sm-banner .banner-box {
+  min-width: 0 !important;       /* FIX: was 580px — caused overflow */
+  width: 100% !important;
+}
+
+@media (max-width: 767px) {
+  #sm-banner {
+    flex-direction: column;
+    margin: 15px !important;
+  }
+
+  #sm-banner .banner-box {
+    height: 45vw !important;
+    min-height: 180px;
+    border-radius: 10px;
+  }
+
+  #sm-banner h2 {
+    font-size: 1.3rem !important;
+  }
+
+  #sm-banner h4 {
+    font-size: 0.9rem !important;
+  }
+}
+
+/* ---- #banner (big promo banner) ---- */
+@media (max-width: 767px) {
+  #banner {
+    height: auto !important;
+    padding: 40px 20px !important;
+  }
+
+  #banner h2 {
+    font-size: 1.4rem !important;
+  }
+
+  #banner h4 {
+    font-size: 0.9rem !important;
+  }
+
+  #banner button {
+    padding: 10px 20px !important;
+    font-size: 13px !important;
+  }
+}
+
+/* ---- NAV PILLS ---- */
+@media (max-width: 575px) {
+  .nav-pills {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 10px;
+  }
+
+  .nav-pills .nav-link {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+    margin: 2px !important;
+  }
+}
+
+/* ---- CONTACT PAGE ---- */
+@media (max-width: 767px) {
+  .contact-page-sec .container {
+    padding: 0 15px;
+  }
+
+  /* Info cards stack vertically */
+  .contact-info-item {
+    margin-bottom: 15px;
+    border-radius: 8px;
+  }
+
+  /* Map becomes full width */
+  .contact-page-map {
+    margin-top: 20px;
+  }
+
+  .contact-page-map iframe {
+    width: 100% !important;
+    height: 250px !important;
+  }
+
+  /* Form fields full width */
+  .contact-page-form .col-md-6 {
+    padding-left: 15px !important;
+  }
+
+  .single-input-fieldsbtn input[type="submit"] {
+    width: 100% !important;
+  }
+}
+
+/* ---- ABOUT PAGE ---- */
+@media (max-width: 767px) {
+  .section_all {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    min-height: auto;
+  }
+
+  .about_content_box_all {
+    padding: 15px !important;
+  }
+
+  .img_about img {
+    max-width: 90% !important;
+    margin: 0 auto;
+  }
+
+  .about_header_main .about_heading {
+    font-size: 1.1rem !important;
+  }
+}
+
+/* ---- FOOTER SECTION (#about-section) ---- */
+@media (max-width: 767px) {
+  #about-section {
+    padding: 40px 15px !important;
+  }
+
+  .about-info-wrap {
+    padding: 10px !important;
+  }
+
+  .about-info {
+    padding: 20px !important;
+  }
+
+  .about-info .col-md-4 {
+    margin-bottom: 25px;
+  }
+
+  .inline-social ul li {
+    margin-right: 8px;
+    margin-bottom: 8px;
+  }
+
+  .wrap-button {
+    margin-top: 20px;
+  }
+
+  .btn-medium {
+    padding: 12px 25px !important;
+    font-size: 14px !important;
+  }
+
+  .bullet-check li {
+    font-size: 14px;
+  }
+}
+
+/* ---- PRODUCTS GRID (shop) ---- */
+@media (max-width: 767px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+    padding: 0 15px 40px !important;
+  }
+
+  .product-card img {
+    height: 220px !important;
+  }
+
+  h1 {
+    font-size: 1.3rem !important;
+    margin: 30px 0 15px !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .products {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ---- GENERAL SECTION PADDING ---- */
+@media (max-width: 767px) {
+  .p-100 {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+  }
+
+  section {
+    padding: 40px 0 !important;
+    min-height: auto !important;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+    word-break: break-word;
+  }
+}
